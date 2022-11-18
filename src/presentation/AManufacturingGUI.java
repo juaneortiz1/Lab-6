@@ -39,7 +39,8 @@ public class AManufacturingGUI extends JFrame{
     }
 
     private void prepareActions(){
-        setDefaultCloseOperation(EXIT_ON_CLOSE);       
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        prepareActionsMenu();
         ticTacButton.addActionListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e) {
@@ -48,6 +49,11 @@ public class AManufacturingGUI extends JFrame{
             });
 
     }
+
+    private void prepareActionsMenu() {
+        nuevo();
+    }
+
     /**
      * Prepara el menu
      */
@@ -71,6 +77,24 @@ public class AManufacturingGUI extends JFrame{
         menuBar.add(menu);
         setJMenuBar(menuBar);
 
+    }
+    private void nuevo() {
+        AManufacturingGUI frame = this;
+        nuevo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ev) {
+                int resultado = JOptionPane.showConfirmDialog(frame,
+                        "¿Está seguro que quiere abrir una nueva pestaña?", "Nuevo", JOptionPane.YES_NO_OPTION);
+                if (resultado == JOptionPane.YES_OPTION) {
+                    frame.setVisible(false);
+                    AManufacturingGUI gui = new AManufacturingGUI();
+                    gui.setVisible(true);
+
+
+                } else if (resultado == JOptionPane.NO_OPTION) {
+                    frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                }
+            }
+        });
     }
     private void ticTacButtonAction() {
         aManufacturing.ticTac();
