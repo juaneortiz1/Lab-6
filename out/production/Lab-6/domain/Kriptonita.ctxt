@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Kriptonita
+comment0.text=\r\n\ Esta\ es\ una\ claseusa\ Thing\ la\ kriptonita\ se\ reproduce\ siempre\ y\ sol\ es\ activada\ si\ tiene\ \r\n\ algo\ al\ lado\r\n\ @author\:\ Sergio\ Gonzales\ -\ Juan\ Esteban\ Ortiz\r\n\ @version\:\ 10/10/2022\r\n
+comment1.params=am\ row\ column\ active
+comment1.target=Kriptonita(AManufacturing,\ int,\ int,\ boolean)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ kriptonita\r\n
+comment2.params=
+comment2.target=void\ decide()
+comment2.text=\r\n\ genera\ alrededor\ de\ si\ mismo\ kriptonita\ inactiva\r\n
+comment3.params=
+comment3.target=void\ go()
+comment3.text=\r\n\ Revisa\ un\ segundo\ despues\r\n
+comment4.params=
+comment4.target=int\ shape()
+comment4.text=\r\n\ cambia\ la\ figura\ a\ un\ circulo\r\n
+comment5.params=
+comment5.target=void\ change()
+comment5.text=Change\ its\ actual\ state\r\n
+comment6.params=
+comment6.target=java.awt.Color\ getColor()
+comment6.text=Returns\ the\ color\r\n\ \ \ \ @return\ \r\n
+numComments=7

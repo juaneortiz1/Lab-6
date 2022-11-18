@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=contorno
+comment0.text=\r\n\ Esta\ es\ una\ clase\ heredada\ de\ cell\ la\ cual\ genera\ una\ cell\ que\ se\ genera\ una\r\n\ una\ capa\ al\ rededor\ de\ las\ celulas\ que\ titilan\ \r\n\ @author\:\ Sergio\ Gonzales\ -\ Juan\ Esteban\ Ortiz\r\n\ @version\:\ 10/10/2022\r\n
+comment1.params=am\ row\ column\ active
+comment1.target=contorno(AManufacturing,\ int,\ int,\ boolean)
+comment2.params=
+comment2.target=void\ decide()
+comment2.text=\r\n\ decide\ for\ objects\ of\ class\ contorno\r\n
+numComments=3
