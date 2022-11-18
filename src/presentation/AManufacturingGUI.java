@@ -4,12 +4,11 @@ import domain.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
 
 public class AManufacturingGUI extends JFrame{
     private JMenu menu;
     private JMenuBar menuBar;
-    private JMenuItem abra, guarde, importe, exporte;
+    private JMenuItem nuevo, abra00, guarde00, importe, exporte;
     private JFileChooser fileChooser;
     public static final int SIDE=20;
     public final int SIZE;
@@ -51,7 +50,48 @@ public class AManufacturingGUI extends JFrame{
     }
 
     private void prepareActionsMenu() {
-        nuevo();
+        guarde00.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    opGuardar();
+                }catch (ReplicateExcepcion excepcion){
+                    excepcion.getMessage();
+                }
+            }
+        });
+        opNuevo();
+        opSalir();
+
+    }
+
+    private void opGuardar() throws ReplicateExcepcion {
+
+    }
+
+    private void opSalir() {
+        AManufacturingGUI frame = this;
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent ev) {
+                JPanel panel = new JPanel();
+                panel.setSize(new Dimension(250, 250));
+                panel.setLayout(null);
+                JLabel label2 = new JLabel("Do you wanna exit?");
+                label2.setVerticalAlignment(SwingConstants.TOP);
+                label2.setHorizontalAlignment(SwingConstants.CENTER);
+                label2.setBounds(20, 80, 200, 20);
+                panel.add(label2);
+                UIManager.put("OptionPane.minimumSize", new Dimension(400, 200));
+                int res = JOptionPane.showConfirmDialog(null, panel, "Exit message",
+                        JOptionPane.YES_NO_OPTION);
+                if (res == 0) {
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                } else if (res == 1) {
+                    frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
+                }
+            }
+        });
     }
 
     /**
@@ -62,14 +102,14 @@ public class AManufacturingGUI extends JFrame{
         menu = new JMenu("menu");
         fileChooser = new JFileChooser();
 
-        abra = new JMenuItem("Abra");
-        guarde = new JMenuItem("Guarde");
+        abra00 = new JMenuItem("Abra");
+        guarde00 = new JMenuItem("Guarde");
         importe = new JMenuItem("Importe");
         exporte = new JMenuItem("Exporte");
 
 
-        menu.add(abra);
-        menu.add(guarde);
+        menu.add(abra00);
+        menu.add(guarde00);
         menu.add(importe);
         menu.add(exporte);
 
@@ -77,9 +117,9 @@ public class AManufacturingGUI extends JFrame{
         setJMenuBar(menuBar);
 
     }
-    private void nuevo() {
+    private void opNuevo() {
         AManufacturingGUI frame = this;
-        abra.addActionListener(new ActionListener() {
+        abra00.addActionListener(new ActionListener() {
            public void actionPerformed(ActionEvent ev) {
                 int resultado = JOptionPane.showConfirmDialog(frame,
                         "¿Está seguro que quiere abrir una nueva pestaña?", "Nuevo", JOptionPane.YES_NO_OPTION);
@@ -95,6 +135,7 @@ public class AManufacturingGUI extends JFrame{
             }
         });
     }
+
     private void ticTacButtonAction() {
         aManufacturing.ticTac();
         photo.repaint();
