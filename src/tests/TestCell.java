@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TestCell
+/*public class TestCell
 {
     @Test
     public void deberiaCrearCelulaViva(){
@@ -56,7 +56,7 @@ public class TestCell
         assertEquals(am.getThing(31,31).isActive(), false);
     }
     
-/*
+
     @Test
     public void deberiaCopiarEstadoMimo(){
         AManufacturing am = new AManufacturing();
@@ -79,8 +79,8 @@ public class TestCell
         assertEquals(am.getThing(3,4).isActive(), false);
         assertEquals(am.getThing(3,5).isActive(), false);
     }
-*/
-    @Test
+
+    //@Test
     public void deberiaCrearKriptonita(){
         AManufacturing am = new AManufacturing();
 
@@ -242,7 +242,7 @@ public class TestCell
 
         
     }
-/*    @Test 
+    @Test
     public void deberiaZombieInfectarCelulasCercanas(){
         AManufacturing am = new AManufacturing();
         am.ticTac();
@@ -267,5 +267,5 @@ public class TestCell
         assertEquals(am.getThing(35,21).isActive(), false);
         assertEquals(am.getThing(34,19).isActive(), false);
         assertEquals(am.getThing(35,19).isActive(), false);
-    }*/
-}
+    }
+}*/

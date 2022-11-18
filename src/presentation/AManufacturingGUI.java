@@ -6,7 +6,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class AManufacturingGUI extends JFrame{  
+public class AManufacturingGUI extends JFrame{
+    private JMenu menu;
+    private JMenuBar menuBar;
+    private JMenuItem nuevo,abrir,salvar,salir,cambiar_color;
+    private JFileChooser fileChooser;
     public static final int SIDE=20;
     public final int SIZE;
     private JButton ticTacButton;
@@ -28,9 +32,10 @@ public class AManufacturingGUI extends JFrame{
         setLayout(new BorderLayout());
         add(photo,BorderLayout.NORTH);
         add(ticTacButton,BorderLayout.SOUTH);
-        setSize(new Dimension(SIDE*SIZE+15,SIDE*SIZE+72)); 
+        setSize(new Dimension(SIDE*SIZE+15,SIDE*SIZE+42));
         setResizable(false);
         photo.repaint();
+        prepareElementosMenu();
     }
 
     private void prepareActions(){
@@ -43,7 +48,30 @@ public class AManufacturingGUI extends JFrame{
             });
 
     }
+    /**
+     * Prepara el menu
+     */
+    public void prepareElementosMenu(){
+        menuBar = new JMenuBar();
+        menu = new JMenu("menu");
+        fileChooser = new JFileChooser();
 
+        nuevo = new JMenuItem("Nuevo");
+        abrir = new JMenuItem("Abrir");
+        salvar = new JMenuItem("Salvar");
+        salir = new JMenuItem("Salir");
+        cambiar_color = new JMenuItem("Cambiar color");
+
+        menu.add(nuevo);
+        menu.add(abrir);
+        menu.add(salvar);
+        menu.add(salir);
+        menu.add(cambiar_color);
+
+        menuBar.add(menu);
+        setJMenuBar(menuBar);
+
+    }
     private void ticTacButtonAction() {
         aManufacturing.ticTac();
         photo.repaint();
@@ -100,4 +128,7 @@ class PhotoAManufacturing extends JPanel{
             }
         }
     }
+
+
+
 }
