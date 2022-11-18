@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Rfplicbte
+comment0.text=\r\n\ Esta\ es\ una\ clase\ heredada\ de\ cell\ la\ cual\ genera\ una\ cell\ que\ se\ genera\ una\r\n\ que\ dependiendo\ de\ si\ la\ cantidad\ de\ celulas\ a\ su\ alrededor\ en\ impar\ se\ activa\ \r\n\ @author\:\ Sergio\ Gonzales\ -\ Juan\ Esteban\ Ortiz\r\n\ @version\:\ 10/10/2022\r\n
+comment1.params=am\ row\ column\ active
+comment1.target=Rfplicbte(AManufacturing,\ int,\ int,\ boolean)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Rfplicbte\r\n
+comment2.params=
+comment2.target=void\ decide()
+comment2.text=\r\n\ decide\ for\ objects\ of\ class\ Rfplicbte\r\n\ coloca\ al\ rededore\ de\ la\ figura\ un\ vorde\ de\ Rfplicbte\ inactivos\r\n\ esto\ para\ poderlos\ evaluar\r\n
+comment3.params=
+comment3.target=void\ go()
+comment3.text=\r\n\ determina\ si\ es\ valido\ activarla\ segun\ la\ cantidad\ de\ celulas\ que\ los\ rodean\r\n
+comment4.params=
+comment4.target=void\ go2()
+comment4.text=\r\n\ convierte\ en\ null\ las\ que\ no\ sirven\r\n
+comment5.params=
+comment5.target=void\ go3()
+comment5.text=\r\n\ Guarda\ las\ nuevas\ creadas\r\n
+numComments=6

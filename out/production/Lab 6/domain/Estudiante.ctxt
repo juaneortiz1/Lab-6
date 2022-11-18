@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Estudiante
+comment0.text=\r\n\ Esta\ es\ una\ clase\ heredada\ de\ cell\ la\ cual\ genera\ una\ cell\ que\ se\ genera\ una\r\n\ cadena\ de\ cell\ verticalmente\ hacia\ abajo\ hasta\ donde\ llega\ al\ tope\ de\ la\r\n\ cuadricula,\ haciendo\ que\ se\ vuelva\ inactiva\ en\ cadena\ hasta\ la\ cell\ estudiante\ \r\n\ original\r\n\ @author\:\ Sergio\ Gonzales\ -\ Juan\ Esteban\ Ortiz\r\n\ @version\:\ 10/10/2022\r\n
+comment1.params=am\ row\ column\ active
+comment1.target=Estudiante(AManufacturing,\ int,\ int,\ boolean)
+comment2.params=
+comment2.target=void\ decide()
+comment2.text=\r\n\ decide\ for\ objects\ of\ class\ Estudiante\r\n
+numComments=3

@@ -50,24 +50,24 @@ public class AManufacturing{
      * Crea los objetos tipo Thing que inicialmente estaran en la cuadricula
      * Amanufacturing
      */
-    public void someThings(){
+    public void someThings() {
         Cell simba = new Cell(this, 1, 1, true);
         Cell dala = new Cell(this, 2, 2, true);
         chess negro = new chess(this, 10, 10, true);
         chess blanco = new chess(this, 40, 40, true);
-        Kriptonita uone = new Kriptonita(this,0,0,true);
-        Kriptonita two = new Kriptonita(this,49,0,true);
-        Kriptonita three = new Kriptonita(this,0,49,true);
-        Kriptonita four = new Kriptonita(this,49,49,true);
+        Kriptonita uone = new Kriptonita(this, 0, 0, true);
+        Kriptonita two = new Kriptonita(this, 49, 0, true);
+        Kriptonita three = new Kriptonita(this, 0, 49, true);
+        Kriptonita four = new Kriptonita(this, 49, 49, true);
         Rfplicbte ajfdk = new Rfplicbte(this, 40, 20, true);
         Rfplicbte ad = new Rfplicbte(this, 39, 20, true);
         Rfplicbte addfdk = new Rfplicbte(this, 40, 19, true);
-        contorno Juanes = new contorno(this,30,30,true);
-        contorno Sergio = new contorno(this,30,29,true);
-        Kriptonita test1 = new Kriptonita(this,2,2,false);
-        Mimo dalda = new Mimo(this, 15, 15, true);
+        contorno Juanes = new contorno(this, 30, 30, true);
+        contorno Sergio = new contorno(this, 30, 29, true);
+        Kriptonita test1 = new Kriptonita(this, 2, 2, false);
+    /*Mimo dalda = new Mimo(this, 15, 15, true);
         Mimo dalfdlda = new Mimo(this, 14, 15, true);
-        Mimo dalfdflda = new Mimo(this, 16, 15, true);
+        Mimo dalfdflda = new Mimo(this, 16, 15, true);*/
     }
     /**
      * Retorna un numero que cuenta la cantidad de objetos activos alrededor del

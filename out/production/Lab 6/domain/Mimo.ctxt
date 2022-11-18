@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Mimo
+comment0.text=\r\n\ Esta\ es\ una\ clase\ heredada\ de\ cell\ la\ cual\ genera\ una\ cell\ que\ imita\ el\ estado\r\n\ de\ sus\ celulas\r\n\ @author\:\ Sergio\ Gonzales\ -\ Juan\ Esteban\ Ortiz\r\n\ @version\:\ 10/10/2022\r\n
+comment1.params=am\ row\ column\ active
+comment1.target=Mimo(AManufacturing,\ int,\ int,\ boolean)
+comment1.text=\r\n\ Crea\ un\ Mimo\r\n
+comment2.params=
+comment2.target=void\ decide()
+numComments=3
