@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=chess
+comment0.text=\r\n\ Esta\ es\ una\ clase\ usa\ thing\ \ para\ generar\ un\ patron\ igual\ que\ en\ el\ ajedrez\r\n\ @author\:\ Sergio\ Gonzales\ -\ Juan\ Esteban\ Ortiz\r\n\ @version\:\ 10/10/2022\r\n
+comment1.params=am\ row\ column\ active
+comment1.target=chess(AManufacturing,\ int,\ int,\ boolean)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ kriptonita\r\n
+comment2.params=
+comment2.target=void\ decide()
+comment2.text=\r\n\ Diagonal\ de\ si\ mismo\ genera\ chess\ inactivos\ y\ luego\ los\ activa\r\n
+comment3.params=
+comment3.target=void\ change()
+comment3.text=Change\ its\ actual\ state\r\n
+comment4.params=
+comment4.target=void\ recorrer()
+comment5.params=
+comment5.target=java.awt.Color\ getColor()
+comment5.text=Returns\ the\ color\r\n\ \ \ \ @return\ \r\n
+numComments=6
