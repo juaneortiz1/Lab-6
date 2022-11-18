@@ -60,9 +60,50 @@ public class AManufacturingGUI extends JFrame{
                 }
             }
         });
+        abra00.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    opAbrir();
+                }catch (ReplicateExcepcion excepcion){
+                    excepcion.getMessage();
+                }
+            }
+        });
+        importe.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    opImportar();
+                }catch (ReplicateExcepcion excepcion){
+                    excepcion.getMessage();
+                }
+            }
+        });
+        exporte.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    opExportar();
+                }catch (ReplicateExcepcion excepcion){
+                    excepcion.getMessage();
+                }
+            }
+        });
         opNuevo();
         opSalir();
 
+
+    }
+
+    private void opExportar() throws ReplicateExcepcion {
+    }
+
+    private void opImportar() throws ReplicateExcepcion  {
+    }
+
+    private void opAbrir() throws ReplicateExcepcion {
+        
     }
 
     private void opGuardar() throws ReplicateExcepcion {
