@@ -9,7 +9,7 @@ import java.io.*;
 public class AManufacturingGUI extends JFrame{
     private JMenu menu;
     private JMenuBar menuBar;
-    private JMenuItem nuevo,abrir,salvar,salir,cambiar_color;
+    private JMenuItem abra, guarde, importe, exporte;
     private JFileChooser fileChooser;
     public static final int SIDE=20;
     public final int SIZE;
@@ -62,17 +62,16 @@ public class AManufacturingGUI extends JFrame{
         menu = new JMenu("menu");
         fileChooser = new JFileChooser();
 
-        nuevo = new JMenuItem("Nuevo");
-        abrir = new JMenuItem("Abrir");
-        salvar = new JMenuItem("Salvar");
-        salir = new JMenuItem("Salir");
-        cambiar_color = new JMenuItem("Cambiar color");
+        abra = new JMenuItem("Abra");
+        guarde = new JMenuItem("Guarde");
+        importe = new JMenuItem("Importe");
+        exporte = new JMenuItem("Exporte");
 
-        menu.add(nuevo);
-        menu.add(abrir);
-        menu.add(salvar);
-        menu.add(salir);
-        menu.add(cambiar_color);
+
+        menu.add(abra);
+        menu.add(guarde);
+        menu.add(importe);
+        menu.add(exporte);
 
         menuBar.add(menu);
         setJMenuBar(menuBar);
@@ -80,8 +79,8 @@ public class AManufacturingGUI extends JFrame{
     }
     private void nuevo() {
         AManufacturingGUI frame = this;
-        nuevo.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
+        abra.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent ev) {
                 int resultado = JOptionPane.showConfirmDialog(frame,
                         "¿Está seguro que quiere abrir una nueva pestaña?", "Nuevo", JOptionPane.YES_NO_OPTION);
                 if (resultado == JOptionPane.YES_OPTION) {
@@ -100,6 +99,8 @@ public class AManufacturingGUI extends JFrame{
         aManufacturing.ticTac();
         photo.repaint();
     }
+
+
 
     public AManufacturing getaManufacturing(){
         return aManufacturing;
