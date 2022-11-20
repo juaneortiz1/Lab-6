@@ -4,6 +4,7 @@ import domain.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 
 public class AManufacturingGUI extends JFrame{
     private JMenu menu;
@@ -159,16 +160,43 @@ public class AManufacturingGUI extends JFrame{
     }
 
     private void opExportar() throws ReplicateExcepcion {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        int result = fileChooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            //System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+        }
     }
 
     private void opImportar() throws ReplicateExcepcion  {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        int result = fileChooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            //System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+        }
     }
 
     private void opAbrir() throws ReplicateExcepcion {
-
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        int result = fileChooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            //System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+        }
     }
     private void opGuardar() throws ReplicateExcepcion {
-
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");
+        int userSelection = fileChooser.showSaveDialog(parentFrame);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToSave = fileChooser.getSelectedFile();
+            //System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
     }
     private void opSalir() throws ReplicateExcepcion{
         int r = JOptionPane.showConfirmDialog(null,"¿Está seguro que desea salir?");
