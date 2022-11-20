@@ -5,6 +5,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.Object.*;
+import java.io.*;
 
 public class AManufacturingGUI extends JFrame{
     private JMenu menu;
@@ -151,7 +155,6 @@ public class AManufacturingGUI extends JFrame{
         AManufacturingGUI frame = this;
         int resultado = JOptionPane.showConfirmDialog(frame, "¿Está seguro que quiere abrir una nueva pestaña?", "Nuevo", JOptionPane.YES_NO_OPTION);
         if (resultado == JOptionPane.YES_OPTION) {
-            frame.setVisible(false);
             AManufacturingGUI gui = new AManufacturingGUI();
             gui.setVisible(true);
         } else if (resultado == JOptionPane.NO_OPTION) {
@@ -189,13 +192,14 @@ public class AManufacturingGUI extends JFrame{
         }
     }
     private void opGuardar() throws ReplicateExcepcion {
-        JFrame parentFrame = new JFrame();
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Specify a file to save");
-        int userSelection = fileChooser.showSaveDialog(parentFrame);
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File fileToSave = fileChooser.getSelectedFile();
-            //System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        fileChooser.showSaveDialog(this);
+        File file = fileChooser.getSelectedFile();
+        try {
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.close();
+        }catch(IOException e){
+            System.out.println(e);  
         }
     }
     private void opSalir() throws ReplicateExcepcion{
