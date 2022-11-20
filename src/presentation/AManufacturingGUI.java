@@ -165,7 +165,7 @@ public class AManufacturingGUI extends JFrame{
     }
 
     private void opAbrir() throws ReplicateExcepcion {
-        
+
     }
     private void opGuardar() throws ReplicateExcepcion {
 
@@ -181,6 +181,8 @@ public class AManufacturingGUI extends JFrame{
         aManufacturing.ticTac();
         photo.repaint();
     }
+
+
 
     public AManufacturing getaManufacturing(){
         return aManufacturing;
