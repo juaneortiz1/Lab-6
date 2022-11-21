@@ -2,6 +2,7 @@ package presentation;
 import domain.*;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -11,16 +12,13 @@ import java.lang.Object.*;
 import java.io.*;
 
 public class AManufacturingGUI extends JFrame{
-    private JMenu menu;
-    private JMenuBar menuBar;
     private JMenuItem nuevo, abra00, guarde00, importe, exporte, salir;
-    private JFileChooser fileChooser;
     public static final int SIDE=20;
     public final int SIZE;
     private JButton ticTacButton;
     private JPanel  controlPanel;
     private PhotoAManufacturing photo;
-    private AManufacturing aManufacturing;
+    private final AManufacturing aManufacturing;
    
     private AManufacturingGUI() {
         aManufacturing=new AManufacturing();
@@ -42,9 +40,9 @@ public class AManufacturingGUI extends JFrame{
         prepareElementosMenu();
     }
     public void prepareElementosMenu(){
-        menuBar = new JMenuBar();
-        menu = new JMenu("Menu");
-        fileChooser = new JFileChooser();
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu = new JMenu("Menu");
+        JFileChooser fileChooser = new JFileChooser();
 
         nuevo = new JMenuItem("Nuevo");
         abra00 = new JMenuItem("Abrir");
@@ -192,16 +190,20 @@ public class AManufacturingGUI extends JFrame{
         }
     }
     private void opGuardar() throws ReplicateExcepcion {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.showSaveDialog(this);
-        File file = fileChooser.getSelectedFile();
-        try {
-            FileWriter fileWriter = new FileWriter(file);
-            fileWriter.close();
-        }catch(IOException e){
-            System.out.println(e);  
+        try{
+            JFileChooser fileChooser = new JFileChooser();
+            //FILTRA TODOS LOS ARCHIVOS Y SOLO DEJA LOS VISIBLES
+            //LOS QUE TENGAN EXTENSION .DAT.
+            fileChooser.setFileFilter(new FileNameExtensionFilter("Archivo con extensión .DAT","DAT"));
+            int seleccion = fileChooser.showSaveDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                this.aManufacturing.guardar(this.aManufacturing,fileChooser.getSelectedFile());
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }
+
     private void opSalir() throws ReplicateExcepcion{
         int r = JOptionPane.showConfirmDialog(null,"¿Está seguro que desea salir?");
         if(r == JOptionPane.YES_OPTION){

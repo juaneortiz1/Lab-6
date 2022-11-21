@@ -1,4 +1,7 @@
 package domain;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.*;
 import java.awt.Color;
 
@@ -29,6 +32,19 @@ public class AManufacturing{
     public int getSize(){ 
         return SIZE;
     }
+
+
+    public void guardar(AManufacturing automata, File file) throws java.io.IOException,java.io.FileNotFoundException,AutomataExcepcion{
+        try{
+            ObjectOutputStream archivoGuardado = new ObjectOutputStream(new FileOutputStream(file));
+            archivoGuardado.writeObject(automata);
+            archivoGuardado.close();
+        }
+        catch(Exception e){
+            throw e;
+        }
+    }
+
     /**
      * Retorna una matriz tipo Thing
      * @param r
